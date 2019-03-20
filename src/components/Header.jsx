@@ -3,23 +3,22 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="nav">
-      <div>
-        <h1>Task Tracker with React</h1>
-      </div>
-      <div>
-        <ul>
+    <nav>
+      <div className="nav-wrapper blue" style={{ padding: "0 1rem" }}>
+        <a className="brand-logo">Task Tracker with React</a>
+        <ul className="right ">
           <li>
+            {" "}
             <NavLink to="/" exact={true}>
               Dashboard
             </NavLink>
           </li>
           <li>
-            <NavLink to="/create">Add Task</NavLink>
+            <NavLink to="/create">Add New Task</NavLink>
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 

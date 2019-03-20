@@ -10,7 +10,10 @@ const TasksTable = props => {
     }
   };
   return (
-    <table>
+    <table
+      className="responsive-table centered highlight striped"
+      style={{ marginTop: "1rem" }}
+    >
       <thead>
         <tr>
           <th>Name</th>
@@ -29,20 +32,25 @@ const TasksTable = props => {
               <td>{task.estimate}</td>
               <td>{task.state}</td>
               <td>
-                <button
-                  onClick={() => {
-                    props.editRow(task);
-                  }}
-                  className="button muted-button corrected"
-                >
-                  <Link to={"/edit/:" + task.id}>Edit</Link>
-                </button>
-                <button
-                  onClick={() => handleDeleteTask(task.id)}
-                  className="button muted-button corrected"
-                >
-                  Delete
-                </button>
+                <div>
+                  <Link to={"/edit/:" + task.id}>
+                    <button
+                      className="btn"
+                      onClick={() => {
+                        props.editRow(task);
+                      }}
+                    >
+                      Edit
+                    </button>
+                  </Link>
+
+                  <button
+                    onClick={() => handleDeleteTask(task.id)}
+                    className="btn red"
+                  >
+                    X
+                  </button>
+                </div>
               </td>
             </tr>
           ))

@@ -19,7 +19,7 @@ const App = () => {
     {
       id: uuid(),
       name: "Task2",
-      description: "data analytics new project",
+      description: "new data analytics",
       estimate: 12,
       state: "In Progress"
     }
