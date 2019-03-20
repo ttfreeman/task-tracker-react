@@ -893,6 +893,10 @@ caption {
 
 /* Navigation
   =============== */
+.nav {
+  background-color: yellow;
+  padding: 0.1rem 0.5rem;
+}
 /* Layout
   =============== */
 

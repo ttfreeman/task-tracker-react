@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TasksTable = props => {
   const handleDeleteTask = id => {
@@ -8,14 +9,13 @@ const TasksTable = props => {
       props.deleteTask(id);
     }
   };
-
   return (
     <table>
       <thead>
         <tr>
           <th>Name</th>
           <th>Description</th>
-          <th>Estimate</th>
+          <th>Estimated Hour/Day</th>
           <th>State</th>
           <th>Actions</th>
         </tr>
@@ -35,7 +35,7 @@ const TasksTable = props => {
                   }}
                   className="button muted-button corrected"
                 >
-                  Edit
+                  <Link to={"/edit/:" + task.id}>Edit</Link>
                 </button>
                 <button
                   onClick={() => handleDeleteTask(task.id)}
