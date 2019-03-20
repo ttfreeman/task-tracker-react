@@ -15,7 +15,7 @@ const TasksTable = props => {
         <tr>
           <th>Name</th>
           <th>Description</th>
-          <th>Estimated Hour/Day</th>
+          <th>Estimated Hours</th>
           <th>State</th>
           <th>Actions</th>
         </tr>

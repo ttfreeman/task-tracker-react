@@ -4,8 +4,6 @@ import { Chart } from "react-google-charts";
 const Diagram = props => {
   const data = [];
   props.tasks.forEach(task => {
-    console.log(task.estimate);
-
     if (!(task.state === "Completed")) {
       data.push([task.name, parseFloat(task.estimate)]);
     }
@@ -19,7 +17,7 @@ const Diagram = props => {
         loader={<div>Loading Chart</div>}
         data={[["Task", "Hours per Day"], ...data]}
         options={{
-          title: "Estimated Hour/Day for Uncompleted Tasks"
+          title: "Estimated Hours"
         }}
         rootProps={{ "data-testid": "1" }}
       />

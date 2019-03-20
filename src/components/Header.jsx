@@ -15,7 +15,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="#">Help</NavLink>
+            <NavLink to="/create">Add Task</NavLink>
           </li>
         </ul>
       </div>

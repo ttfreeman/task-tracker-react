@@ -20,6 +20,7 @@ const DashboardPage = props => {
         </div>
         <TasksTable
           tasks={props.tasks}
+          filteredTasks={props.filteredTasks}
           editRow={props.editRow}
           deleteTask={props.deleteTask}
         />

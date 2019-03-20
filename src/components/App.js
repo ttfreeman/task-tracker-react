@@ -24,12 +24,14 @@ const App = () => {
       state: "In Progress"
     }
   ];
-
+  const isFiltered = false;
   const initialFormState = { id: null, name: "", description: "" };
 
   const [tasks, setTasks] = useState(tasksData);
   const [editing, setEditing] = useState(false);
   const [currentTask, setCurrentTask] = useState(initialFormState);
+  let [filtered, setFiltered] = useState(tasksData);
+  const [isF, setIsF] = useState(isFiltered);
 
   const addTask = task => {
     task.id = uuid();
@@ -43,9 +45,15 @@ const App = () => {
 
   const filterBy = fil => {
     if (fil === "All") {
-      setTasks([...tasks]);
+      setIsF(false);
+    } else {
+      setIsF(true);
+      setFiltered(tasks.filter(task => task.state === fil));
     }
-    setTasks(tasks.filter(task => task.state === fil));
+  };
+
+  const unFilter = () => {
+    setIsF(false);
   };
 
   const editRow = task => {
@@ -71,7 +79,7 @@ const App = () => {
           path="/"
           render={() => (
             <DashboardPage
-              tasks={tasks}
+              tasks={isF === false ? tasks : filtered}
               editRow={editRow}
               deleteTask={deleteTask}
               filterBy={filterBy}
@@ -91,6 +99,7 @@ const App = () => {
               setEditing={setEditing}
               currentTask={currentTask}
               updateTask={updateTask}
+              unFilter={unFilter}
             />
           )}
         />

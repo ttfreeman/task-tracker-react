@@ -21,6 +21,7 @@ const EditTaskForm = props => {
       return;
 
     props.updateTask(task.id, task);
+    props.unFilter();
     setToD(true);
   };
 
